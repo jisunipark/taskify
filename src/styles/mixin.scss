@@ -1,4 +1,4 @@
-@import './variable';
+@import './variables';
 
 @mixin tablet {
   @media (min-width: $breakpoint-tablet) {
