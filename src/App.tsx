@@ -1,11 +1,11 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import LandingPage from './pages/LandingPage';
-import AccountPage from './pages/AccountPage';
-import DashboardEditPage from './pages/DashboardEditPage';
-import DashboardPage from './pages/DashboardPage';
-import SignInPage from './pages/SignInPage';
-import SignUpPage from './pages/SignUpPage';
-import './styles/global.scss';
+import LandingPage from '@/pages/LandingPage';
+import AccountPage from '@/pages/AccountPage';
+import DashboardEditPage from '@/pages/DashboardEditPage';
+import DashboardPage from '@/pages/DashboardPage';
+import SignInPage from '@/pages/SignInPage';
+import SignUpPage from '@/pages/SignUpPage';
+import '@/styles/global.scss';
 
 export default function App() {
   return (
