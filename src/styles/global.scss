@@ -2,19 +2,27 @@
 @import './variables.scss';
 @import './mixin.scss';
 
+@font-face {
+  font-family: 'Pretendard Variable';
+  font-weight: 45 920;
+  font-style: normal;
+  font-display: swap;
+  src: url('../../publish/fonts/PretendardVariable.woff2') format('woff2-variations');
+}
+
 * {
   margin: 0;
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard Variable', sans-serif;
   box-sizing: border-box;
 }
 
 html {
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard Variable', sans-serif;
   font-size: 62.5%;
 }
 
 body {
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard Variable', sans-serif;
   font-size: 1.6rem;
   background-color: $color-gray-10;
 }
