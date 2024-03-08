@@ -1,4 +1,6 @@
 @import './normalize.scss';
+@import './variables.scss';
+@import './mixin.scss';
 
 * {
   margin: 0;
@@ -8,10 +10,12 @@
 
 html {
   font-family: 'Noto Sans KR', sans-serif;
+  font-size: 62.5%;
 }
 
 body {
   font-family: 'Noto Sans KR', sans-serif;
+  font-size: 1.6rem;
 }
 
 h1 {
