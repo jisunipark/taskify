@@ -4,6 +4,7 @@ import AuthLogo from '../auth-logo/AuthLogo';
 import SignInForm from '../auth-form/SignInForm';
 import { AUTH_TEXT } from '../constant';
 import styles from './AuthLayout.module.scss';
+import SignUpForm from '../auth-form/SignUpForm';
 
 const cx = classNames.bind(styles);
 
@@ -17,7 +18,7 @@ export default function AuthLayout({ type }: AuthLayoutProps) {
   return (
     <div className={cx('wrap')}>
       <AuthLogo type={type} />
-      <SignInForm />
+      {type === 'signin' ? <SignInForm /> : <SignUpForm />}
       <div className={cx('suggestion')}>
         <span>{question}</span>
         <Link to={linkedUrl}>{suggestion}</Link>

@@ -36,3 +36,22 @@
     border: 1px solid $color-primary;
   }
 }
+
+.agreement-check {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-top: 0.8rem;
+
+  input {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 0.4rem;
+    border: 1px solid $color-gray-30;
+    background: $color-white;
+  }
+
+  span {
+    color: $color-black-20;
+  }
+}

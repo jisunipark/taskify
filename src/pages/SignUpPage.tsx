@@ -1,3 +1,9 @@
+import AuthLayout from '@/components/auth/auth-layout/AuthLayout';
+
 export default function SignUpPage() {
-  return <div>signup page</div>;
+  return (
+    <div className="page">
+      <AuthLayout type="signup" />
+    </div>
+  );
 }
