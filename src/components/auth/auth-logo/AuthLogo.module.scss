@@ -1,0 +1,42 @@
+@import '@/styles/global.scss';
+
+.auth-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.9rem;
+  margin-bottom: 1.6rem;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+  margin: 0 auto;
+  width: 12rem;
+
+  @include tablet {
+    gap: 3rem;
+    width: 20rem;
+  }
+}
+
+.logo-img {
+  width: 9.8rem;
+  align-self: flex-end;
+
+  @include tablet {
+    width: 16.4rem;
+  }
+}
+
+.logo-text {
+  width: 100%;
+}
+
+.message {
+  color: $color-black-20;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 500;
+}
