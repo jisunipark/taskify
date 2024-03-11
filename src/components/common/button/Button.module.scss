@@ -1,17 +1,64 @@
 @import '@/styles/global.scss';
 
-// 모달
+/* baic button style */
+
 .button {
   display: flex;
-  width: 13.8rem;
-  height: 4.2rem;
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
-  border-radius: 0.8rem;
   text-align: center;
-  font-size: 1.4rem;
   font-weight: 500;
+}
+
+/* type */
+
+.normal {
+  width: 8.4rem;
+  height: 2.8rem;
+  border-radius: 0.4rem;
+  font-size: 1.2rem;
+
+  @include tablet {
+    height: 3.2rem;
+  }
+
+  &.short {
+    width: 5.2rem;
+
+    @include tablet {
+      width: 8.4rem;
+    }
+  }
+
+  &.accpet-reject {
+    width: 100%;
+
+    @include tablet {
+      width: 7.2rem;
+      height: 3rem;
+    }
+
+    @include desktop {
+      width: 8.4rem;
+      height: 3.2rem;
+    }
+  }
+}
+
+.auth {
+  padding: 1.4rem 0;
+  margin-top: 0.4rem;
+  width: 100%;
+  border-radius: 0.8rem;
+  font-size: 1.8rem;
+}
+
+.modal {
+  width: 13.8rem;
+  height: 4.2rem;
+  border-radius: 0.8rem;
+  font-size: 1.4rem;
 
   @include tablet {
     width: 12rem;
@@ -19,6 +66,35 @@
     font-size: 1.6rem;
   }
 }
+
+.invitation {
+  gap: 0.6rem;
+  width: 8.6rem;
+  height: 2.8rem;
+  border-radius: 0.4rem;
+  font-size: 1.2rem;
+
+  @include tablet {
+    gap: 0.8rem;
+    width: 10.5rem;
+    height: 3.2rem;
+    font-size: 1.4rem;
+  }
+}
+
+.landing {
+  display: flex;
+  padding: 1.3rem 0rem 1.2rem 0rem;
+  width: 23.5rem;
+  border-radius: 0.8rem;
+
+  @include tablet {
+    width: 280px;
+    padding: 1.5rem 0rem 1.6rem 0rem;
+  }
+}
+
+/* color */
 
 .primary {
   background: $color-primary;
@@ -29,4 +105,13 @@
   background: $color-white;
   border: 1px solid $color-gray-30;
   color: $color-primary;
+
+  &.modal {
+    color: $color-gray-50;
+  }
+}
+
+.disabled {
+  background: $color-gray-40;
+  color: $color-white;
 }
