@@ -7,12 +7,11 @@ const cx = classNames.bind(styles);
 
 interface ButtonProps {
   children: ReactNode;
-  type: 'normal' | 'auth' | 'modal' | 'invitation' | 'landing';
+  type: 'normal' | 'auth' | 'modal' | 'invitation' | 'landing' | 'accept-reject';
   color?: 'primary' | 'secondary' | 'disabled';
-  option?: 'short' | 'accept-reject';
+  option?: 'short';
 }
 
-// 해결해야 하는 것: 수락/거절
 export default function Button({ children, type, color = 'primary', option }: ButtonProps) {
   return (
     <button
@@ -24,13 +23,14 @@ export default function Button({ children, type, color = 'primary', option }: Bu
           modal: type === 'modal',
           invitation: type === 'invitation',
           landing: type === 'landing',
+          'accept-reject': type === 'accept-reject',
         },
         {
           primary: color === 'primary',
           secondary: color === 'secondary',
           disabled: color === 'disabled',
         },
-        { short: option === 'short', 'accept-reject': option === 'accept-reject' }
+        { short: option === 'short' }
       )}
     >
       {type === 'invitation' && <img src={addBoxIcon} alt="초대하기 아이콘" />}

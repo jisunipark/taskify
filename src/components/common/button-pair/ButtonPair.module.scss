@@ -1,0 +1,18 @@
+@import '@/styles/global.scss';
+
+.button-pair {
+  display: flex;
+
+  &.modal {
+    flex-direction: row-reverse;
+    gap: 1.1rem;
+
+    @include tablet {
+      gap: 1.2rem;
+    }
+  }
+
+  &.accept-reject {
+    gap: 1rem;
+  }
+}

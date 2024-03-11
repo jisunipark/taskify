@@ -21,6 +21,7 @@
 
   @include tablet {
     height: 3.2rem;
+    font-size: 1.4rem;
   }
 
   &.short {
@@ -28,20 +29,6 @@
 
     @include tablet {
       width: 8.4rem;
-    }
-  }
-
-  &.accpet-reject {
-    width: 100%;
-
-    @include tablet {
-      width: 7.2rem;
-      height: 3rem;
-    }
-
-    @include desktop {
-      width: 8.4rem;
-      height: 3.2rem;
     }
   }
 }
@@ -91,6 +78,23 @@
   @include tablet {
     width: 280px;
     padding: 1.5rem 0rem 1.6rem 0rem;
+  }
+}
+
+.accpet-reject {
+  width: 100%;
+  border-radius: 0.4rem;
+  font-size: 1.2rem;
+
+  @include tablet {
+    width: 7.2rem;
+    height: 3rem;
+    font-size: 1.4rem;
+  }
+
+  @include desktop {
+    width: 8.4rem;
+    height: 3.2rem;
   }
 }
 
