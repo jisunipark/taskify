@@ -44,6 +44,11 @@
   margin-top: 0.8rem;
 
   input {
+    display: none;
+  }
+
+  input + label {
+    position: relative;
     width: 2rem;
     height: 2rem;
     border-radius: 0.4rem;
@@ -51,7 +56,29 @@
     background: $color-white;
   }
 
+  input:checked + label::after {
+    content: '✓';
+    position: absolute;
+    inset: 0;
+    background-color: $color-primary;
+    text-align: center;
+    color: $color-white;
+    font-weight: 700;
+  }
+
   span {
     color: $color-black-20;
+  }
+}
+
+.error {
+  input,
+  input + label {
+    border: 1px solid $color-red;
+  }
+
+  small {
+    color: $color-red;
+    font-size: 1.4rem;
   }
 }
