@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 import classNames from 'classnames/bind';
-import addBoxIcon from '@/assets/add-box-white.svg';
+import AddBoxIcon from '@/assets/icons/AddBoxIcon';
 import styles from './Button.module.scss';
 
 const cx = classNames.bind(styles);
@@ -30,10 +30,10 @@ export default function Button({ children, type, color = 'primary', option }: Bu
           secondary: color === 'secondary',
           disabled: color === 'disabled',
         },
-        { short: option === 'short' }
+        { short: option === 'short' },
       )}
     >
-      {type === 'invitation' && <img src={addBoxIcon} alt="초대하기 아이콘" />}
+      {type === 'invitation' && <AddBoxIcon />}
       <span>{children}</span>
     </button>
   );

@@ -1,10 +1,10 @@
-import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';
-import AuthLogo from '../auth-logo/AuthLogo';
-import SignInForm from '../auth-form/SignInForm';
-import { AUTH_TEXT } from '../constant';
+import classNames from 'classnames/bind';
+import SignInForm from '@/components/auth/auth-form/SignInForm';
+import SignUpForm from '@/components/auth/auth-form/SignUpForm';
+import AuthLogo from '@/components/auth/auth-logo/AuthLogo';
+import { AUTH_TEXT } from '@/components/auth/constant';
 import styles from './AuthLayout.module.scss';
-import SignUpForm from '../auth-form/SignUpForm';
 
 const cx = classNames.bind(styles);
 

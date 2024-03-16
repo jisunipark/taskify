@@ -2,12 +2,12 @@ import { IconProps } from '@/types/iconType';
 
 const SIZE = {
   lg: {
-    width: '165',
-    height: '190',
+    width: '199',
+    height: '57',
   },
   sm: {
-    width: '99',
-    height: '114',
+    width: '81',
+    height: '22',
   },
 };
 

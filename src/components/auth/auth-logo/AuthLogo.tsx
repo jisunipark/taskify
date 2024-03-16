@@ -1,8 +1,8 @@
 import classNames from 'classnames/bind';
-import logoImg from '@/assets/logo-img-lg.svg';
-import logoText from '@/assets/logo-lg.svg';
+import { AUTH_TEXT } from '@/components/auth/constant';
+import LogoImg from '@/assets/LogoImg';
+import LogoText from '@/assets/LogoText';
 import styles from './AuthLogo.module.scss';
-import { AUTH_TEXT } from '../constant';
 
 const cx = classNames.bind(styles);
 
@@ -15,8 +15,8 @@ export default function AuthLogo({ type }: AuthLogoProps) {
   return (
     <div className={cx('auth-header')}>
       <div className={cx('logo')}>
-        <img className={cx('logo-img')} src={logoImg} alt="Taskify 로고 이미지" />
-        <img className={cx('logo-text')} src={logoText} alt="Taskify 로고" />
+        <LogoImg size="lg" className={cx('logo-img')} />
+        <LogoText size="lg" className={cx('logo-text')} />
       </div>
       <span className={cx('message')}>{message}</span>
     </div>

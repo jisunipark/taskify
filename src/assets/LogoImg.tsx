@@ -6,8 +6,8 @@ const SIZE = {
     height: '190',
   },
   sm: {
-    width: '99',
-    height: '114',
+    width: '29',
+    height: '34',
   },
 };
 

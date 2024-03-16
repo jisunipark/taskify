@@ -1,5 +1,5 @@
 import classNames from 'classnames/bind';
-import AuthButton from '../auth-button/AuthButton';
+import AuthButton from '@/components/auth/auth-button/AuthButton';
 import styles from './AuthForm.module.scss';
 
 const cx = classNames.bind(styles);

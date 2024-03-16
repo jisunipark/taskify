@@ -1,5 +1,5 @@
 import classNames from 'classnames/bind';
-import { AUTH_TEXT } from '../constant';
+import { AUTH_TEXT } from '@/components/auth/constant';
 import styles from './AuthButton.module.scss';
 
 const cx = classNames.bind(styles);
