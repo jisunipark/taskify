@@ -1,18 +1,17 @@
 ---
-name: "To be fixed"
+name: Issue to be fixed
 about: Create a report to help us improve
-title: "[Fix]"
-labels: bug
+title: '[Issue]'
+labels: issue
 assignees: jisunipark
-
 ---
 
-**Current Issue**
+## Current Issue
+
 -
 
-**Screenshots**
--
+## Screenshots
 
+## Notes
 
-**Notes**
 -

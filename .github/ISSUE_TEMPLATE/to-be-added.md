@@ -1,14 +1,15 @@
 ---
-name: To be added
+name: Enhancement
 about: Suggest an idea for this project
-title: "[Add]"
+title: '[Enhancement]'
 labels: enhancement
 assignees: jisunipark
-
 ---
 
-**Idea**
+## Idea
+
 -
 
-**Notes**
+## Notes
+
 -
