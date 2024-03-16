@@ -23,10 +23,12 @@
 
 .logo-img {
   width: 9.8rem;
+  height: 11.3rem;
   align-self: flex-end;
 
   @include tablet {
     width: 16.4rem;
+    height: 19rem;
   }
 }
 
