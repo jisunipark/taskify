@@ -1,8 +1,8 @@
 import classNames from 'classnames/bind';
+import { AUTH_TEXT } from '@/components/auth/constant';
 import logoImg from '@/assets/logo-img-lg.svg';
 import logoText from '@/assets/logo-lg.svg';
 import styles from './AuthLogo.module.scss';
-import { AUTH_TEXT } from '../constant';
 
 const cx = classNames.bind(styles);
 

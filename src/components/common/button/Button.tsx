@@ -30,7 +30,7 @@ export default function Button({ children, type, color = 'primary', option }: Bu
           secondary: color === 'secondary',
           disabled: color === 'disabled',
         },
-        { short: option === 'short' }
+        { short: option === 'short' },
       )}
     >
       {type === 'invitation' && <img src={addBoxIcon} alt="초대하기 아이콘" />}
