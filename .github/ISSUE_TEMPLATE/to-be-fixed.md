@@ -1,5 +1,5 @@
 ---
-name: "\bTo be fixed"
+name: "To be fixed"
 about: Create a report to help us improve
 title: "[Fix]"
 labels: bug
