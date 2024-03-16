@@ -17,6 +17,22 @@
   color: $color-black-20;
 }
 
+.password-input {
+  position: relative;
+
+  .input {
+    width: 100%;
+  }
+
+  button {
+    position: absolute;
+    top: 1.5rem;
+    bottom: 1.5rem;
+    right: 1.6rem;
+    padding: 0;
+  }
+}
+
 .input {
   display: flex;
   height: 5rem;

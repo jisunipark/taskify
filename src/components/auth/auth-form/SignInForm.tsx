@@ -1,6 +1,8 @@
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import classNames from 'classnames/bind';
 import AuthButton from '@/components/auth/auth-button/AuthButton';
+import EyeIcon from '@/assets/icons/EyeIcon';
 import styles from './AuthForm.module.scss';
 
 const cx = classNames.bind(styles);
@@ -16,6 +18,9 @@ export default function SignInForm() {
     handleSubmit,
     formState: { isSubmitting, errors },
   } = useForm<Inputs>();
+
+  const [isVisible, setIsVisible] = useState(false);
+  const handleEyeClick = () => setIsVisible(!isVisible);
 
   return (
     <form
@@ -47,19 +52,24 @@ export default function SignInForm() {
         <label htmlFor="password" className={cx('label')}>
           비밀번호
         </label>
-        <input
-          id="password"
-          type="password"
-          placeholder="비밀번호를 입력해주세요"
-          className={cx('input')}
-          {...register('password', {
-            required: '비밀번호를 입력해주세요',
-            minLength: {
-              value: 8,
-              message: '8자 이상 작성해주세요',
-            },
-          })}
-        />
+        <div className={cx('password-input')}>
+          <input
+            id="password"
+            type={isVisible ? 'text' : 'password'}
+            placeholder="비밀번호를 입력해주세요"
+            className={cx('input')}
+            {...register('password', {
+              required: '비밀번호를 입력해주세요',
+              minLength: {
+                value: 8,
+                message: '8자 이상 작성해주세요',
+              },
+            })}
+          />
+          <button onClick={handleEyeClick}>
+            <EyeIcon active={isVisible} />
+          </button>
+        </div>
         {errors.password && <small>{errors.password.message}</small>}
       </div>
       <AuthButton type="signin" isSubmitting={isSubmitting} />
