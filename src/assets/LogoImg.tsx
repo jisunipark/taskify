@@ -25,7 +25,7 @@ export default function LogoImg({ size, fill, ...styleProps }: IconProps) {
     >
       <g
         id="&#225;&#132;&#140;&#225;&#133;&#161;&#225;&#132;&#137;&#225;&#133;&#161;&#225;&#134;&#171; 1 1"
-        clip-path="url(#clip0_12401_9074)"
+        clipPath="url(#clip0_12401_9074)"
       >
         <g id="Objects">
           <g id="Group">

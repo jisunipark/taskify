@@ -6,9 +6,14 @@ const cx = classNames.bind(styles);
 
 interface AuthButtonProps {
   type: 'signin' | 'signup';
+  isSubmitting: boolean;
 }
 
-export default function AuthButton({ type }: AuthButtonProps) {
+export default function AuthButton({ type, isSubmitting = false }: AuthButtonProps) {
   const { button } = AUTH_TEXT[type];
-  return <button className={cx('submit-button')}>{button}</button>;
+  return (
+    <button disabled={isSubmitting} className={cx('submit-button')}>
+      {button}
+    </button>
+  );
 }
