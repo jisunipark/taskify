@@ -1,0 +1,103 @@
+@import '@/styles/global.scss';
+
+.points {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5.9rem;
+
+  @include tablet {
+    gap: 9rem;
+  }
+}
+
+.point {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: calc(100% - 1.6rem * 2);
+  aspect-ratio: 34.3/68.6;
+  padding: 6rem 5.8rem;
+  border-radius: 0.8rem;
+  background: $color-black-30;
+
+  @include tablet {
+    padding: 6.3rem 6rem;
+    align-items: start;
+    width: calc(100% - 4rem * 2);
+    aspect-ratio: 66.4/97.2;
+  }
+
+  @include desktop {
+    padding: 12.3rem 6rem;
+    max-width: 120rem;
+    aspect-ratio: 2/1;
+  }
+}
+
+.point-num {
+  margin-bottom: 6.1rem;
+  color: $color-gray-40;
+  font-size: 1.8rem;
+  font-weight: 500;
+
+  @include tablet {
+    margin-bottom: 10rem;
+    font-size: 2.2rem;
+  }
+}
+
+.texts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include tablet {
+    align-items: start;
+  }
+}
+
+.text {
+  color: $color-white;
+  font-size: 3.6rem;
+  font-weight: 700;
+  line-height: 5rem;
+
+  @include tablet {
+    font-size: 4.8rem;
+    line-height: 6.4rem;
+  }
+}
+
+.img1 img {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: calc((100% * 29.6rem / 34.3rem));
+  border-radius: 0.8rem 0rem;
+
+  @include tablet {
+    width: calc(100% * 51.9rem / 66.4rem);
+  }
+
+  @include desktop {
+    width: calc(100% * 59.4rem / 120rem);
+  }
+}
+
+.img2 img {
+  position: absolute;
+  bottom: 0;
+  width: calc((100% * 21.7rem / 34.3rem));
+  border-radius: 0.8rem 0.8rem 0rem 0rem;
+
+  @include tablet {
+    width: calc(100% * 36rem / 66.4rem);
+  }
+
+  @include desktop {
+    left: 10.8rem;
+    width: calc(100% * 43.6rem / 120rem);
+  }
+}
