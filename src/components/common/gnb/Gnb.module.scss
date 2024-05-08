@@ -1,0 +1,112 @@
+@import '@/styles/global.scss';
+
+.wrap {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 6.7rem;
+  padding: 1.2rem;
+  width: calc(100% - 6.7rem);
+  height: 6rem;
+  background-color: $color-white;
+  border-bottom-color: $color-gray-30;
+  border-bottom-width: 0.1rem;
+  border-bottom-style: solid;
+  z-index: 4;
+
+  @include tablet {
+    margin-left: 16rem;
+    padding: 1.2rem 4rem;
+    width: calc(100% - 16rem);
+    height: 7rem;
+  }
+
+  @include desktop {
+    margin-left: 30rem;
+    padding: 1.2rem 8rem 1.2rem 4rem;
+    width: calc(100% - 30rem);
+  }
+
+  .title {
+    display: none;
+
+    @include desktop {
+      display: flex;
+      align-items: center;
+      flex-grow: 1;
+      gap: 0.8rem;
+    }
+  }
+}
+
+.essential {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 1.6rem;
+  width: 100%;
+
+  @include tablet {
+    gap: 3.2rem;
+  }
+
+  @include desktop {
+    gap: 4rem;
+    width: fit-content;
+  }
+}
+
+.title {
+  color: $color-black-20;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.button-pair {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 0.6rem;
+
+  @include tablet {
+    gap: 1.2rem;
+  }
+
+  @include desktop {
+    gap: 1.6rem;
+  }
+}
+
+.profile-group {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+
+  .my-profile {
+    display: flex;
+    gap: 1.2rem;
+    align-items: center;
+
+    span {
+      display: none;
+      color: $color-black-20;
+      font-weight: 500;
+    }
+  }
+
+  @include tablet {
+    gap: 2.4rem;
+
+    span {
+      display: inline-block;
+    }
+  }
+
+  @include desktop {
+    gap: 3.2rem;
+  }
+}

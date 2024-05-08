@@ -1,0 +1,27 @@
+@import '@/styles/global.scss';
+
+.profile-item {
+  width: 3.4rem;
+  height: 3.4rem;
+  flex-shrink: 0;
+  stroke-width: 0.2rem;
+  stroke: $color-white;
+
+  @include tablet {
+    width: 3.8rem;
+    height: 3.8rem;
+  }
+}
+
+.profile-stack {
+  display: flex;
+
+  .profile-item {
+    margin-right: -1rem;
+    /* TODO 테두리 잘리는 문제 해결 필요 */
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
