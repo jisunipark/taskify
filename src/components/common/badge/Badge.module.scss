@@ -1,0 +1,14 @@
+@import '@/styles/global.scss';
+
+.badge {
+  display: flex;
+  padding: 0.4rem 0.6rem;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  border-radius: 0.4rem;
+  background: #e7f7db;
+  color: #86d549;
+  text-align: center;
+  font-size: 1rem;
+}
