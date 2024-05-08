@@ -1,0 +1,31 @@
+@import '@/styles/global.scss';
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include tablet {
+    align-self: flex-start;
+  }
+}
+
+.logo-img {
+  width: 2.3643rem;
+  height: 2.7134rem;
+
+  @include tablet {
+    width: 2.8815rem;
+    height: 3.3069rem;
+  }
+}
+
+.logo-text {
+  display: none;
+
+  @include tablet {
+    display: block;
+    width: 8rem;
+    height: 2.2rem;
+  }
+}
