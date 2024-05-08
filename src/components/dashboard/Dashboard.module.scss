@@ -1,0 +1,29 @@
+@import '@/styles/global.scss';
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+
+  hr {
+    height: 0.1rem;
+    border: 0;
+    background-color: $color-gray-20;
+    margin: 1.2rem -1.2rem 1.6rem -1.2rem;
+
+    @include tablet {
+      margin: 2rem -2rem;
+    }
+  }
+
+  @include desktop {
+    flex-direction: row;
+
+    hr {
+      width: 0.1rem;
+      height: calc(100vh - 7rem);
+      border: 0;
+      background-color: $color-gray-20;
+      margin: -2rem 2rem;
+    }
+  }
+}

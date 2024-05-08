@@ -1,0 +1,58 @@
+@import '@/styles/global.scss';
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  height: fit-content;
+
+  @include tablet {
+    gap: 2.4rem;
+  }
+
+  @include desktop {
+    width: 35.4rem;
+  }
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.section-header > svg {
+  width: 2.2rem;
+  height: 2.2rem;
+
+  @include tablet {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+}
+
+.section-info {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+
+  .section-title {
+    color: $color-black-40;
+    font-weight: 700;
+    margin-right: 0.4rem;
+
+    @include tablet {
+      font-size: 1.8rem;
+    }
+  }
+}
+
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  @include tablet {
+    gap: 1.6rem;
+  }
+}
