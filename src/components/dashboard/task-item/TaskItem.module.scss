@@ -12,6 +12,19 @@
   background: $color-white;
 }
 
+.add-button {
+  display: flex;
+  width: 2rem;
+  height: 2rem;
+  margin: -0.6rem auto;
+  padding: 0.2727rem;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: 0.4rem;
+  background: $color-light-primary;
+}
+
 .info {
   display: flex;
   flex-direction: column;
@@ -22,19 +35,6 @@
   color: $color-black-20;
   font-size: 1.4rem;
   font-weight: 500;
-}
-
-.badge {
-  display: flex;
-  padding: 0.4rem 0.6rem;
-  justify-content: center;
-  align-items: center;
-  width: fit-content;
-  border-radius: 0.4rem;
-  background: #e7f7db;
-  color: #86d549;
-  text-align: center;
-  font-size: 1rem;
 }
 
 .detail {
