@@ -73,13 +73,18 @@ ol {
 .page.board {
   margin-left: 6.7rem;
   margin-top: 6rem;
+  width: calc(100vw - 6.7rem);
+  height: calc(100vh - 6rem);
 
   @include tablet {
     margin-left: 16rem;
     margin-top: 7rem;
+    width: calc(100vw - 16rem);
+    height: calc(100vh - 7rem);
   }
 
   @include desktop {
     margin-left: 30rem;
+    width: calc(100vw - 30rem);
   }
 }
