@@ -15,7 +15,7 @@ export default function BoardSection() {
         <div className={cx('section-info')}>
           <EllipseIcon width={8} height={8} />
           <span className={cx('section-title')}>To Do</span>
-          <Badge>2</Badge> {/* TODO 크기 수정 필요 */}
+          <Badge type="count">2</Badge>
         </div>
         <SettingIcon />
       </div>

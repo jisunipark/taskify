@@ -10,6 +10,23 @@
   border-radius: 0.6rem;
   border: 1px solid $color-gray-30;
   background: $color-white;
+
+  @include tablet {
+    flex-direction: row;
+    padding: 2rem;
+    gap: 2rem;
+
+    img {
+      width: 9rem;
+    }
+  }
+
+  @include desktop {
+    flex-direction: column;
+    img {
+      width: 100%;
+    }
+  }
 }
 
 .add-button {
@@ -29,22 +46,57 @@
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
+
+  @include tablet {
+    gap: 1rem;
+    width: 100%;
+    justify-content: space-between;
+  }
 }
 
 .title {
+  grid-column: 1 / span 2;
   color: $color-black-20;
   font-size: 1.4rem;
   font-weight: 500;
+
+  @include tablet {
+    font-size: 1.6rem;
+  }
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+
+  @include tablet {
+    flex-direction: row;
+    gap: 1.6rem;
+  }
+
+  @include desktop {
+    flex-direction: column;
+    gap: 1.3rem;
+  }
 }
 
 .detail {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
 
   svg {
     width: 2.2rem;
     height: 2.2rem;
+  }
+
+  @include tablet {
+    svg {
+      width: 2.4rem;
+      height: 2.4rem;
+    }
   }
 }
 
@@ -59,5 +111,13 @@
   svg {
     width: 1.4rem;
     height: 1.4rem;
+  }
+
+  @include tablet {
+    font-size: 1.2rem;
+    svg {
+      width: 1.8rem;
+      height: 1.8rem;
+    }
   }
 }

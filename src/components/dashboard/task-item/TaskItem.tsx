@@ -13,13 +13,15 @@ export default function TaskItem() {
       <img src={MockImg} alt="이미지" className={cx('img')} />
       <div className={cx('info')}>
         <span className={cx('title')}>새로운 일정 관리 Taskify</span>
-        <Badge>일반</Badge>
-        <div className={cx('detail')}>
-          <div className={cx('date')}>
-            <CalendarIcon />
-            <span>2022.12.31</span>
+        <div className={cx('details')}>
+          <Badge type="tag">일반</Badge>
+          <div className={cx('detail')}>
+            <div className={cx('date')}>
+              <CalendarIcon />
+              <span>2022.12.31</span>
+            </div>
+            <ProfileItem />
           </div>
-          <ProfileItem />
         </div>
       </div>
     </div>
