@@ -1,3 +1,9 @@
+import Lnb from '@/components/common/lnb/Lnb';
+
 export default function DashboardPage() {
-  return <div>dashboard page</div>;
+  return (
+    <div>
+      <Lnb />
+    </div>
+  );
 }

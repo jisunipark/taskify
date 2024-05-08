@@ -1,0 +1,25 @@
+@import '@/styles/global.scss';
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3.89rem;
+  padding-top: 2rem;
+  width: 6.7rem;
+  height: 100vh;
+  background-color: #ffffff;
+  border-right-color: $color-gray-30;
+  border-right-width: 0.1rem;
+  border-right-style: solid;
+
+  @include tablet {
+    gap: 5.69rem;
+    padding: 2rem 2.4rem;
+    width: 16rem;
+  }
+
+  @include desktop {
+    width: 30rem;
+  }
+}
