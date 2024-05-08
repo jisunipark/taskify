@@ -1,18 +1,18 @@
 import { ReactNode } from 'react';
 import classNames from 'classnames/bind';
-import AddBoxIcon from '@/assets/icons/AddBoxIcon';
 import styles from './Button.module.scss';
 
 const cx = classNames.bind(styles);
 
 interface ButtonProps {
   children: ReactNode;
-  type: 'normal' | 'auth' | 'modal' | 'invitation' | 'landing' | 'accept-reject';
-  color?: 'primary' | 'secondary' | 'disabled';
+  type: 'normal' | 'auth' | 'modal' | 'invitation' | 'landing' | 'accept-reject' | 'gnb';
+  color?: 'primary' | 'secondary' | 'disabled' | 'none';
   option?: 'short';
+  icon?: ReactNode;
 }
 
-export default function Button({ children, type, color = 'primary', option }: ButtonProps) {
+export default function Button({ children, type, color = 'primary', option, icon }: ButtonProps) {
   return (
     <button
       className={cx(
@@ -24,16 +24,18 @@ export default function Button({ children, type, color = 'primary', option }: Bu
           invitation: type === 'invitation',
           landing: type === 'landing',
           'accept-reject': type === 'accept-reject',
+          gnb: type === 'gnb',
         },
         {
           primary: color === 'primary',
           secondary: color === 'secondary',
           disabled: color === 'disabled',
+          none: color === 'none',
         },
         { short: option === 'short' },
       )}
     >
-      {type === 'invitation' && <AddBoxIcon />}
+      {icon ?? icon}
       <span>{children}</span>
     </button>
   );
