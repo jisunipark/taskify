@@ -1,0 +1,25 @@
+@import '@/styles/global.scss';
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+
+  @include tablet {
+    gap: 2.4rem;
+  }
+
+  button {
+    align-self: flex-end;
+  }
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+
+  @include tablet {
+    gap: 2rem;
+  }
+}
