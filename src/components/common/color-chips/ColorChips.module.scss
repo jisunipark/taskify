@@ -25,3 +25,11 @@
     width: 2.4rem;
   }
 }
+
+.wrap button:first-child ~ button {
+  display: none;
+
+  @include tablet {
+    display: block;
+  }
+}

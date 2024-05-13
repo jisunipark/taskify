@@ -3,6 +3,7 @@
 .wrap {
   display: flex;
   flex-direction: column;
+  gap: 2.4rem;
   padding: 2rem;
   width: 100%;
   flex-shrink: 0;
@@ -15,19 +16,11 @@
   }
 
   h3 {
+    flex-shrink: 0;
     font-size: 2rem;
     font-weight: 700;
     @include tablet {
       font-size: 2.4rem;
-    }
-  }
-
-  h4 {
-    color: $color-gray-40;
-    font-size: 1.4rem;
-    font-weight: 400;
-    @include tablet {
-      font-size: 1.6rem;
     }
   }
 }

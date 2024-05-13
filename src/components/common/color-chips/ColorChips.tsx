@@ -7,10 +7,12 @@ const cx = classNames.bind(styles);
 
 export default function ColorChips() {
   const colors = Object.keys(COLORS);
+
   return (
+    /* TODO 컬러 칩 색깔 이상함... */
     <div className={cx('wrap')}>
       {colors.map((color) => (
-        <ColorChipItem checked={false} color={color} />
+        <ColorChipItem key={color} checked={false} color={color} />
       ))}
     </div>
   );

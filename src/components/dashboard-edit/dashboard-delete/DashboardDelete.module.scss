@@ -7,6 +7,7 @@
   height: 5.2rem;
   padding: 1.6rem 0;
   margin-top: calc(3.2rem - 2.1rem);
+  margin-bottom: 1.5rem;
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
@@ -21,10 +22,12 @@
   @include tablet {
     padding: 2rem 0;
     margin-top: calc(4.8rem - 2.4rem);
+    margin-bottom: 3rem;
     height: 6.2rem;
   }
 
   @include desktop {
     margin-top: calc(4rem - 2.4rem);
+    margin-bottom: 3.5rem;
   }
 }

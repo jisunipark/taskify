@@ -5,16 +5,20 @@ import styles from './List.module.scss';
 const cx = classNames.bind(styles);
 
 interface ListProps {
+  label: string;
   section: 'members' | 'invitation';
 }
 
-export default function List({ section }: ListProps) {
+export default function List({ label, section }: ListProps) {
   return (
-    <div className={cx('list-wrap')}>
-      <ListItem section={section} />
-      <ListItem section={section} />
-      <ListItem section={section} />
-      <ListItem section={section} />
+    <div className={cx('wrap')}>
+      <label>{label}</label>
+      <div className={cx('list-wrap')}>
+        <ListItem section={section} />
+        <ListItem section={section} />
+        <ListItem section={section} />
+        <ListItem section={section} />
+      </div>
     </div>
   );
 }

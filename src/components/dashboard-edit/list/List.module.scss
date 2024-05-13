@@ -1,5 +1,24 @@
 @import '@/styles/global.scss';
 
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+
+  @include tablet {
+    gap: 1.5rem;
+  }
+
+  label {
+    color: $color-gray-40;
+    font-size: 1.4rem;
+    font-weight: 400;
+    @include tablet {
+      font-size: 1.6rem;
+    }
+  }
+}
+
 .list-wrap {
   display: flex;
   flex-direction: column;
