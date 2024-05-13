@@ -1,0 +1,27 @@
+@import '@/styles/global.scss';
+
+.wrap {
+  display: flex;
+  gap: 1rem;
+}
+
+.item-wrap {
+  position: relative;
+  aspect-ratio: 1/ 1;
+  width: 2.8rem;
+
+  @include tablet {
+    width: 3rem;
+  }
+}
+
+.checked {
+  position: absolute;
+  inset: 0;
+  aspect-ratio: 1/ 1;
+  width: 2.8rem;
+
+  @include tablet {
+    width: 2.4rem;
+  }
+}
