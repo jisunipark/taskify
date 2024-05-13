@@ -1,0 +1,26 @@
+@import '@/styles/global.scss';
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  padding: 2rem;
+  width: 100%;
+  flex-shrink: 0;
+  border-radius: 0.8rem;
+  background: $color-white;
+  color: $color-black-20;
+
+  @include tablet {
+    padding: 2.8rem;
+  }
+
+  h3 {
+    flex-shrink: 0;
+    font-size: 2rem;
+    font-weight: 700;
+    @include tablet {
+      font-size: 2.4rem;
+    }
+  }
+}

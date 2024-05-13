@@ -1,0 +1,42 @@
+@import '@/styles/global.scss';
+
+.wrap {
+  display: flex;
+  align-items: center;
+
+  &:first-child {
+    transform: scaleX(-1);
+  }
+}
+
+.control-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3.6rem;
+  height: 3.6rem;
+  border-radius: 0rem 0.4rem 0.4rem 0rem;
+  border: 1px solid $color-gray-30;
+  background: $color-white;
+
+  @include tablet {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  svg {
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+}
+
+.control-item.previous {
+  border-radius: 0.4rem 0rem 0rem 0.4rem;
+  svg {
+    transform: scaleX(-1);
+  }
+}
+
+.control-item.next {
+  border-radius: 0rem 0.4rem 0.4rem 0rem;
+}
