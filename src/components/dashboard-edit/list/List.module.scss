@@ -1,0 +1,50 @@
+@import '@/styles/global.scss';
+
+.list-wrap {
+  display: flex;
+  flex-direction: column;
+  margin: 0 -2rem;
+  @include tablet {
+    margin: 0 -2.8rem;
+  }
+}
+
+.item-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 2rem;
+  border-bottom: 0.1rem solid $color-gray-20;
+
+  &:last-child {
+    border: none;
+    margin-bottom: -2rem;
+    @include tablet {
+      margin-bottom: -2.8rem;
+    }
+  }
+
+  @include tablet {
+    padding: 1.6rem 2.8rem;
+  }
+
+  .item-content {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+
+    @include tablet {
+      gap: 1.2rem;
+    }
+
+    span {
+      color: $color-black-20;
+      font-size: 1.4rem;
+      line-height: normal;
+
+      @include tablet {
+        font-size: 1.6rem;
+      }
+    }
+  }
+}

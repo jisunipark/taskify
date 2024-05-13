@@ -6,6 +6,8 @@ import Input from '@/components/common/input/Input';
 import Section from '@/components/common/section/Section';
 import Sections from '@/components/common/sections/Sections';
 import DashboardDelete from '@/components/dashboard-edit/dashboard-delete/DashboardDelete';
+import List from '@/components/dashboard-edit/list/List';
+import ListItem from '@/components/dashboard-edit/list/ListItem';
 import styles from './DashboardEdit.module.scss';
 
 const cx = classNames.bind(styles);
@@ -29,10 +31,12 @@ export default function DashboardEdit() {
         <Section>
           <h3>구성원</h3>
           <h4>이름</h4>
+          <List section="members" />
         </Section>
         <Section>
           <h3>비브리지</h3>
           <h4>이메일</h4>
+          <List section="invitation" />
         </Section>
       </Sections>
       <DashboardDelete />
