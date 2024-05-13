@@ -1,0 +1,16 @@
+@import '@/styles/global.scss';
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 1.1rem;
+
+  @include tablet {
+    gap: 1.2rem;
+  }
+
+  @include desktop {
+    max-width: 62rem;
+  }
+}
