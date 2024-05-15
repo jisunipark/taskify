@@ -1,3 +1,5 @@
+import Account from '@/components/account/Account';
+
 export default function AccountPage() {
-  return <div>account page</div>;
+  return <Account />;
 }

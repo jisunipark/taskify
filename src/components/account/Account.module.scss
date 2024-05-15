@@ -1,0 +1,19 @@
+@import '@/styles/global.scss';
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+
+  gap: 2.1rem;
+
+  @include tablet {
+    gap: 2.4rem;
+  }
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 3.7rem;
+}

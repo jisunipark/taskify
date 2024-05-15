@@ -14,12 +14,50 @@
   }
 }
 
-.inputs {
+.all-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+
+  @include tablet {
+    flex-direction: row;
+    gap: 1.6rem;
+  }
+}
+
+.text-inputs {
   display: flex;
   flex-direction: column;
   gap: 1.6rem;
+  width: 100%;
 
   @include tablet {
     gap: 2rem;
+  }
+}
+
+.file-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 10rem;
+  height: 10rem;
+  flex-shrink: 0;
+  border-radius: 0.6rem;
+  background: #f5f5f5;
+
+  svg {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  @include tablet {
+    width: 18.2rem;
+    height: 18.2rem;
+
+    svg {
+      width: 3rem;
+      height: 3rem;
+    }
   }
 }

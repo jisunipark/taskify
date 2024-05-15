@@ -12,6 +12,7 @@
   color: $color-black-20;
 
   @include tablet {
+    gap: 3.2rem;
     padding: 2.8rem;
   }
 
