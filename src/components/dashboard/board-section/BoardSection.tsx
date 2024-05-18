@@ -17,7 +17,9 @@ export default function BoardSection() {
           <span className={cx('section-title')}>To Do</span>
           <Badge type="count">2</Badge>
         </div>
-        <SettingIcon />
+        <button type="button">
+          <SettingIcon />
+        </button>
       </div>
       <div className={cx('task-list')}>
         <AddTask />
