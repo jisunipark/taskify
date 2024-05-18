@@ -1,10 +1,17 @@
 @import '@/styles/global.scss';
 
-.wrap {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 100vh;
+dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: relative;
+  padding: 0;
+  border: none;
+  border-radius: 0.8rem;
+  background: $color-white;
+}
+
+dialog::backdrop {
   background-color: rgba(0, 0, 0, 0.7);
 }
