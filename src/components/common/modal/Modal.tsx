@@ -1,4 +1,5 @@
 import { ReactNode } from 'react';
+import { createPortal } from 'react-dom';
 import classNames from 'classnames/bind';
 import styles from './Modal.module.scss';
 
@@ -9,5 +10,8 @@ interface ModalProps {
 }
 
 export default function Modal({ children }: ModalProps) {
-  return <div className={cx('wrap')}>{children}</div>;
+  const modalEl = document.getElementById('modal');
+  if (!modalEl) return;
+
+  return createPortal(<div className={cx('wrap')}>{children}</div>, modalEl);
 }
