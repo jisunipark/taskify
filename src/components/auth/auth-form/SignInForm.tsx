@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import classNames from 'classnames/bind';
 import AuthButton from '@/components/auth/auth-button/AuthButton';
 import { signin } from '@/api/authController';
+import { MutationError } from '@/types/queryType';
 import EyeIcon from '@/assets/icons/EyeIcon';
 import styles from './AuthForm.module.scss';
 
@@ -13,12 +14,6 @@ const cx = classNames.bind(styles);
 export interface Inputs {
   email: string;
   password: string;
-}
-
-interface MutationError extends Error {
-  response?: {
-    status: number;
-  };
 }
 
 export default function SignInForm() {
