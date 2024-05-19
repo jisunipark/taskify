@@ -43,8 +43,12 @@ export default function SignInForm() {
         setAccessToken(data.accessToken);
         navigate('/dashboard');
       },
-      onError: (error: MutationError) =>
-        console.log(error.response?.status) /* TODO 상황에 맞는 모달 열기 */,
+      onError: (error: MutationError) => {
+        if (error.response?.status === 400)
+          alert('비밀번호가 일치하지 않습니다.'); /* TODO 모달로 변경 */
+        else if (error.response?.status === 404)
+          alert('존재하지 않는 유저입니다.'); /* TODO 모달로 변경 */
+      },
     });
   };
 
