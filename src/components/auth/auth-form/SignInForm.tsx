@@ -1,15 +1,24 @@
+import { useMutation } from '@tanstack/react-query';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
 import classNames from 'classnames/bind';
 import AuthButton from '@/components/auth/auth-button/AuthButton';
+import { signin } from '@/api/authController';
 import EyeIcon from '@/assets/icons/EyeIcon';
 import styles from './AuthForm.module.scss';
 
 const cx = classNames.bind(styles);
 
-interface Inputs {
+export interface Inputs {
   email: string;
   password: string;
+}
+
+interface MutationError extends Error {
+  response?: {
+    status: number;
+  };
 }
 
 export default function SignInForm() {
@@ -20,14 +29,32 @@ export default function SignInForm() {
   } = useForm<Inputs>();
 
   const [isVisible, setIsVisible] = useState(false);
+
+  const navigate = useNavigate();
+
   const handleEyeClick = () => setIsVisible(!isVisible);
 
+  const setAccessToken = (token: string) => {
+    localStorage.setItem('accessToken', token);
+  };
+
+  const signinMutation = useMutation({
+    mutationFn: (userInfo: Inputs) => signin(userInfo),
+  });
+
+  const handleSignin = (userInfo: Inputs) => {
+    signinMutation.mutate(userInfo, {
+      onSuccess: (data) => {
+        setAccessToken(data.accessToken);
+        navigate('/dashboard');
+      },
+      onError: (error: MutationError) =>
+        console.log(error.response?.status) /* TODO 상황에 맞는 모달 열기 */,
+    });
+  };
+
   return (
-    <form
-      noValidate
-      onSubmit={handleSubmit((data) => alert(JSON.stringify(data)))}
-      className={cx('form')}
-    >
+    <form noValidate onSubmit={handleSubmit((data) => handleSignin(data))} className={cx('form')}>
       <div className={cx('form-section', { error: errors.email })}>
         <label htmlFor="email" className={cx('label')}>
           이메일
