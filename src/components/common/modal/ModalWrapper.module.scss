@@ -1,0 +1,17 @@
+@import '@/styles/global.scss';
+
+dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: relative;
+  padding: 0;
+  border: none;
+  border-radius: 0.8rem;
+  background: $color-white;
+}
+
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.7);
+}

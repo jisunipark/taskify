@@ -1,6 +1,6 @@
 import classNames from 'classnames/bind';
 import Button from '@/components/common/button/Button';
-import styles from './AuthButton.module.scss';
+import styles from './ButtonPair.module.scss';
 
 const cx = classNames.bind(styles);
 
