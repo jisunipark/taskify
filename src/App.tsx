@@ -19,8 +19,8 @@ export default function App() {
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route element={<Layout />}>
-            <Route path="account" element={<AccountPage />} />
-            <Route path="dashboard">
+            <Route path="account/:userId" element={<AccountPage />} />
+            <Route path="dashboard/:userId">
               <Route index element={<DashboardPage />} />
               <Route path="edit" element={<DashboardEditPage />} />
             </Route>

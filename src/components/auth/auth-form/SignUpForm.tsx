@@ -40,9 +40,9 @@ export default function SignUpForm() {
 
   const handleSignup = (newUser: SignupInfo) => {
     signupMutation.mutate(newUser, {
-      onSuccess: () => {
+      onSuccess: (data) => {
         alert('가입이 완료되었습니다!'); /* TODO 모달로 변경 */
-        navigate('/dashboard');
+        navigate(`/dashboard/${data.user.id}`); /* TODO 넘어가지 않는 문제 */
       },
       onError: (error: MutationError) => {
         if (error.response?.status === 409)

@@ -41,7 +41,7 @@ export default function SignInForm() {
     signinMutation.mutate(userInfo, {
       onSuccess: (data) => {
         setAccessToken(data.accessToken);
-        navigate('/dashboard');
+        navigate(`/dashboard/${data.user.id}`);
       },
       onError: (error: MutationError) => {
         if (error.response?.status === 400)
