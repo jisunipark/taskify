@@ -1,5 +1,5 @@
 import instance from '@/lib/axios';
-import { User } from '@/types/usersType';
+import { User } from '@/types/dataType';
 
 export interface SignupInfo {
   email: string;
