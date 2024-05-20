@@ -1,7 +1,11 @@
+import { useMutation } from '@tanstack/react-query';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
 import classNames from 'classnames/bind';
 import AuthButton from '@/components/auth/auth-button/AuthButton';
+import { SignupInfo, signup } from '@/api/usersController';
+import { MutationError } from '@/types/queryType';
 import EyeIcon from '@/assets/icons/EyeIcon';
 import styles from './AuthForm.module.scss';
 
@@ -25,14 +29,30 @@ export default function SignUpForm() {
   const watchPassword = watch('password');
 
   const [isVisible, setIsVisible] = useState(false);
+
+  const navigate = useNavigate();
+
   const handleEyeClick = () => setIsVisible(!isVisible);
 
+  const signupMutation = useMutation({
+    mutationFn: (newUser: SignupInfo) => signup(newUser),
+  });
+
+  const handleSignup = (newUser: SignupInfo) => {
+    signupMutation.mutate(newUser, {
+      onSuccess: (data) => {
+        alert('가입이 완료되었습니다!'); /* TODO 모달로 변경 */
+        navigate(`/dashboard/${data.user.id}`); /* TODO 넘어가지 않는 문제 */
+      },
+      onError: (error: MutationError) => {
+        if (error.response?.status === 409)
+          alert('이미 사용 중인 이메일입니다.'); /* TODO 모달로 변경 */
+      },
+    });
+  };
+
   return (
-    <form
-      noValidate
-      onSubmit={handleSubmit((data) => alert(JSON.stringify(data)))}
-      className={cx('form')}
-    >
+    <form noValidate onSubmit={handleSubmit((data) => handleSignup(data))} className={cx('form')}>
       <div className={cx('form-section', { error: errors.email })}>
         <label htmlFor="email" className={cx('label')}>
           이메일

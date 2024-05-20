@@ -96,14 +96,16 @@
       color: $color-black-20;
       font-weight: 500;
     }
+
+    @include tablet {
+      span {
+        display: inline-block;
+      }
+    }
   }
 
   @include tablet {
     gap: 2.4rem;
-
-    span {
-      display: inline-block;
-    }
   }
 
   @include desktop {

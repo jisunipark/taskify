@@ -1,6 +1,8 @@
+import { useQuery } from '@tanstack/react-query';
 import classNames from 'classnames/bind';
 import Button from '@/components/common/button/Button';
 import ProfileStack, { ProfileItem } from '@/components/common/gnb/profile-stack/ProfileStack';
+import { getMyInfo } from '@/api/usersController';
 import AddBoxIcon from '@/assets/icons/AddBoxIcon';
 import CrownIcon from '@/assets/icons/CrownIcon';
 import SettingIcon from '@/assets/icons/SettingIcon';
@@ -10,6 +12,13 @@ import styles from './Gnb.module.scss';
 const cx = classNames.bind(styles);
 
 export default function Gnb() {
+  const { data: myInfo } = useQuery({
+    queryKey: ['me'],
+    queryFn: getMyInfo,
+  });
+
+  console.log(myInfo?.nickname);
+
   return (
     <div className={cx('wrap')}>
       <div className={cx('title')}>
@@ -30,7 +39,7 @@ export default function Gnb() {
           <VerticalStroke />
           <div className={cx('my-profile')}>
             <ProfileItem />
-            <span>박지선</span>
+            <span>{myInfo?.nickname}</span>
           </div>
         </div>
       </div>
