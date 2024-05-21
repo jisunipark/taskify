@@ -7,14 +7,17 @@ const cx = classNames.bind(styles);
 
 interface ModalWrapperProps {
   children: ReactNode;
+  id: string;
+  onRemove: (id: string) => void;
 }
 
-export default function ModalWrapper({ children }: ModalWrapperProps) {
+export default function ModalWrapper({ children, id, onRemove }: ModalWrapperProps) {
   const modalRef = useRef<HTMLDialogElement>(null);
 
   const handleClickOutside = (e: MouseEvent) => {
     if (modalRef.current && modalRef.current === e.target) {
       modalRef.current.close();
+      onRemove(id);
     }
   };
 
@@ -30,7 +33,7 @@ export default function ModalWrapper({ children }: ModalWrapperProps) {
     return () => {
       document.removeEventListener('click', handleClickOutside);
     };
-  }, []);
+  }, [id]);
 
   return createPortal(
     <dialog ref={modalRef} className={cx('wrap')}>
