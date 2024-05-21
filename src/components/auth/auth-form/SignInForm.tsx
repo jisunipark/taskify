@@ -3,8 +3,10 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import classNames from 'classnames/bind';
+import ConfirmModal from '@/components/common/modal/confirm-modal/ConfirmModal';
 import AuthButton from '@/components/auth/auth-button/AuthButton';
 import { signin } from '@/api/authController';
+import useModal from '@/hooks/useModal';
 import { MutationError } from '@/types/queryType';
 import EyeIcon from '@/assets/icons/EyeIcon';
 import styles from './AuthForm.module.scss';
@@ -25,6 +27,7 @@ export default function SignInForm() {
 
   const [isVisible, setIsVisible] = useState(false);
 
+  const openModal = useModal();
   const navigate = useNavigate();
 
   const handleEyeClick = () => setIsVisible(!isVisible);
@@ -45,9 +48,13 @@ export default function SignInForm() {
       },
       onError: (error: MutationError) => {
         if (error.response?.status === 400)
-          alert('비밀번호가 일치하지 않습니다.'); /* TODO 모달로 변경 */
+          openModal(({ close }) => (
+            <ConfirmModal closeClick={close} message="비밀번호가 일치하지 않습니다." />
+          ));
         else if (error.response?.status === 404)
-          alert('존재하지 않는 유저입니다.'); /* TODO 모달로 변경 */
+          openModal(({ close }) => (
+            <ConfirmModal closeClick={close} message="존재하지 않는 유저입니다." />
+          ));
       },
     });
   };

@@ -3,8 +3,10 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import classNames from 'classnames/bind';
+import ConfirmModal from '@/components/common/modal/confirm-modal/ConfirmModal';
 import AuthButton from '@/components/auth/auth-button/AuthButton';
 import { SignupInfo, signup } from '@/api/usersController';
+import useModal from '@/hooks/useModal';
 import { MutationError } from '@/types/queryType';
 import EyeIcon from '@/assets/icons/EyeIcon';
 import styles from './AuthForm.module.scss';
@@ -30,6 +32,7 @@ export default function SignUpForm() {
 
   const [isVisible, setIsVisible] = useState(false);
 
+  const openModal = useModal();
   const navigate = useNavigate();
 
   const handleEyeClick = () => setIsVisible(!isVisible);
@@ -41,12 +44,21 @@ export default function SignUpForm() {
   const handleSignup = (newUser: SignupInfo) => {
     signupMutation.mutate(newUser, {
       onSuccess: (data) => {
-        alert('가입이 완료되었습니다!'); /* TODO 모달로 변경 */
-        navigate(`/dashboard/${data.user.id}`); /* TODO 넘어가지 않는 문제 */
+        openModal(({ close }) => (
+          <ConfirmModal
+            closeClick={() => {
+              close();
+              navigate(`/dashboard/${data.user.id}`); /* TODO 넘어가지 않는 문제 */
+            }}
+            message="가입이 완료되었습니다!"
+          />
+        ));
       },
       onError: (error: MutationError) => {
         if (error.response?.status === 409)
-          alert('이미 사용 중인 이메일입니다.'); /* TODO 모달로 변경 */
+          openModal(({ close }) => (
+            <ConfirmModal closeClick={close} message="이미 사용 중인 이메일입니다." />
+          ));
       },
     });
   };
