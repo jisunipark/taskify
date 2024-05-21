@@ -21,6 +21,12 @@ export default function ModalWrapper({ children, id, onRemove }: ModalWrapperPro
     }
   };
 
+  const handleKeydownEsc = (e: KeyboardEvent) => {
+    if (e.key === 'Escape') {
+      onRemove(id);
+    }
+  };
+
   const modalEl = document.getElementById('modal');
   if (!modalEl) return;
 
@@ -28,10 +34,12 @@ export default function ModalWrapper({ children, id, onRemove }: ModalWrapperPro
     if (modalRef.current) {
       modalRef.current.showModal();
       document.addEventListener('click', handleClickOutside);
+      document.addEventListener('keydown', handleKeydownEsc);
     }
 
     return () => {
       document.removeEventListener('click', handleClickOutside);
+      document.removeEventListener('keydown', handleKeydownEsc);
     };
   }, [id]);
 
