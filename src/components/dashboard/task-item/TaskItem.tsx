@@ -1,7 +1,7 @@
 import classNames from 'classnames/bind';
 import Badge from '@/components/common/badge/Badge';
 import { ProfileItem } from '@/components/common/gnb/profile-stack/ProfileStack';
-import InputModal from '@/components/common/modal/input-modal/InputModal';
+import InputModal from '@/components/common/modal/create-dashboard-modal/CreateDashboardModal';
 import useModal from '@/hooks/useModal';
 import CalendarIcon from '@/assets/icons/CalendarIcon';
 import MockImg from '../../../assets/images/img.png';
