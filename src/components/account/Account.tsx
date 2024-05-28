@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import classNames from 'classnames/bind';
 import GoBack from '@/components/common/go-back/GoBack';
 import InputForm from '@/components/common/input-form/InputForm';
@@ -10,10 +10,11 @@ import styles from './Account.module.scss';
 const cx = classNames.bind(styles);
 
 export default function Account() {
+  const { userId } = useParams();
   const navigate = useNavigate();
 
   const handleBackClick = () => {
-    navigate('/dashboard');
+    navigate(`/dashboard/${userId}`);
   };
 
   return (

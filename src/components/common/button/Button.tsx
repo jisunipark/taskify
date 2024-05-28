@@ -8,13 +8,22 @@ interface ButtonProps {
   children: ReactNode;
   type: 'normal' | 'auth' | 'modal' | 'invitation' | 'landing' | 'accept-reject' | 'gnb';
   color?: 'primary' | 'secondary' | 'disabled' | 'none';
-  option?: 'short';
+  option?: 'short' | 'full';
   icon?: ReactNode;
+  onClick?: () => void;
 }
 
-export default function Button({ children, type, color = 'primary', option, icon }: ButtonProps) {
+export default function Button({
+  children,
+  type,
+  color = 'primary',
+  option,
+  icon,
+  onClick,
+}: ButtonProps) {
   return (
     <button
+      onClick={onClick}
       className={cx(
         'button',
         {
@@ -32,7 +41,7 @@ export default function Button({ children, type, color = 'primary', option, icon
           disabled: color === 'disabled',
           none: color === 'none',
         },
-        { short: option === 'short' },
+        { short: option === 'short', full: option === 'full' },
       )}
     >
       {icon ?? icon}

@@ -1,0 +1,49 @@
+@import '@/styles/global.scss';
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  padding: 2.8rem 2rem;
+
+  @include tablet {
+    gap: 2.8rem;
+    padding: 3.2rem 2.8rem 2.8rem 2.8rem;
+    width: 54rem;
+  }
+}
+
+.modal-title {
+  color: $color-black-20;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: normal;
+
+  @include tablet {
+    margin-bottom: 0.4rem;
+    font-size: 2.4rem;
+  }
+}
+
+.bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+
+  @include tablet {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .delete-button {
+    align-self: flex-start;
+    color: $color-gray-40;
+    font-size: 1.4rem;
+    line-height: normal;
+    text-decoration-line: underline;
+
+    @include tablet {
+      align-self: flex-end;
+    }
+  }
+}

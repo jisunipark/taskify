@@ -6,10 +6,15 @@ dialog {
   left: 50%;
   transform: translate(-50%, -50%);
   position: relative;
+  width: 100%;
   padding: 0;
   border: none;
   border-radius: 0.8rem;
   background: $color-white;
+
+  @include tablet {
+    width: fit-content;
+  }
 }
 
 dialog::backdrop {

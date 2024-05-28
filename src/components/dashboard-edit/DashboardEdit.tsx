@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import classNames from 'classnames/bind';
 import Button from '@/components/common/button/Button';
 import ColorChips from '@/components/common/color-chips/ColorChips';
@@ -16,10 +16,11 @@ import styles from './DashboardEdit.module.scss';
 const cx = classNames.bind(styles);
 
 export default function DashboardEdit() {
+  const { userId } = useParams();
   const navigate = useNavigate();
 
   const handleBackClick = () => {
-    navigate('/dashboard');
+    navigate(`/dashboard/${userId}`);
   };
 
   return (

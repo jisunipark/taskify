@@ -3,11 +3,17 @@
 .wrap {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
   gap: 1rem;
   color: $color-black-20;
 
   label {
     font-weight: 500;
+
+    @include tablet {
+      font-size: 1.8rem;
+    }
   }
 
   input {
@@ -22,6 +28,11 @@
 
     &::placeholder {
       color: '#9FA6B2';
+    }
+
+    @include tablet {
+      height: 4.8rem;
+      font-size: 1.6rem;
     }
   }
 }
