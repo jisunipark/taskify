@@ -1,6 +1,6 @@
 import classNames from 'classnames/bind';
 import Badge from '@/components/common/badge/Badge';
-import InputModal from '@/components/common/modal/input-modal/InputModal';
+import EditColumnModal from '@/components/common/modal/edit-column-modal/EditColumnModal';
 import AddTask from '@/components/dashboard/task-item/AddTask';
 import TaskItem from '@/components/dashboard/task-item/TaskItem';
 import useModal from '@/hooks/useModal';
@@ -14,8 +14,7 @@ export default function BoardSection() {
   const openModal = useModal();
 
   const handleColumnEditClick = () => {
-    // TODO 컬럼 수정 모달
-    openModal(({ close }) => <InputModal closeClick={close} />);
+    openModal(({ close }) => <EditColumnModal closeClick={close} />);
   };
 
   return (
