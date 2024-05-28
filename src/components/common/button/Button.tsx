@@ -10,11 +10,20 @@ interface ButtonProps {
   color?: 'primary' | 'secondary' | 'disabled' | 'none';
   option?: 'short';
   icon?: ReactNode;
+  onClick?: () => void;
 }
 
-export default function Button({ children, type, color = 'primary', option, icon }: ButtonProps) {
+export default function Button({
+  children,
+  type,
+  color = 'primary',
+  option,
+  icon,
+  onClick,
+}: ButtonProps) {
   return (
     <button
+      onClick={onClick}
       className={cx(
         'button',
         {

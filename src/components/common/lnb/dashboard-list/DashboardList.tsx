@@ -1,4 +1,6 @@
 import classNames from 'classnames/bind';
+import InputModal from '@/components/common/modal/input-modal/InputModal';
+import useModal from '@/hooks/useModal';
 import AddBoxIcon from '@/assets/icons/AddBoxIcon';
 // import CrownIcon from '@/assets/icons/CrownIcon';
 import EllipseIcon from '@/assets/icons/EllipseIcon';
@@ -7,11 +9,19 @@ import styles from './DashboardList.module.scss';
 const cx = classNames.bind(styles);
 
 export default function DashboardList() {
+  const openModal = useModal();
+
+  const handleCreateDashboardClick = () => {
+    openModal(({ close }) => <InputModal closeClick={close} />);
+  };
+
   return (
     <div className={cx('dashboard-wrap')}>
       <div className={cx('dashboard-label')}>
         <span>Dash Boards</span>
-        <AddBoxIcon />
+        <button type="button" onClick={handleCreateDashboardClick}>
+          <AddBoxIcon />
+        </button>
       </div>
       <div className={cx('list-wrap')}>
         <DashboardItem />
