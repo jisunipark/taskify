@@ -18,10 +18,10 @@ export default function ButtonPair({ type, primaryText, secondaryText }: ButtonP
         'accept-reject': type === 'accept-reject',
       })}
     >
-      <Button type={type} color="primary">
+      <Button type={type} color="primary" option="full">
         {primaryText}
       </Button>
-      <Button type={type} color="secondary">
+      <Button type={type} color="secondary" option="full">
         {secondaryText}
       </Button>
     </div>
