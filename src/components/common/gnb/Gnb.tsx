@@ -3,7 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import classNames from 'classnames/bind';
 import Button from '@/components/common/button/Button';
 import ProfileStack, { ProfileItem } from '@/components/common/gnb/profile-stack/ProfileStack';
-import InputModal from '@/components/common/modal/input-modal/InputModal';
+import InviteModal from '@/components/common/modal/invite-modal/InviteModal';
 import { getMyInfo } from '@/api/usersController';
 import useModal from '@/hooks/useModal';
 import AddBoxIcon from '@/assets/icons/AddBoxIcon';
@@ -28,8 +28,7 @@ export default function Gnb() {
   };
 
   const handleInviteClick = () => {
-    // TODO 초대 모달
-    openModal(({ close }) => <InputModal closeClick={close} />);
+    openModal(({ close }) => <InviteModal closeClick={close} />);
   };
 
   const { data: myInfo } = useQuery({
