@@ -1,5 +1,5 @@
 import classNames from 'classnames/bind';
-import InputModal from '@/components/common/modal/input-modal/InputModal';
+import CreateDashboardModal from '@/components/common/modal/create-dashboard-modal/CreateDashboardModal';
 import useModal from '@/hooks/useModal';
 import AddBoxIcon from '@/assets/icons/AddBoxIcon';
 // import CrownIcon from '@/assets/icons/CrownIcon';
@@ -12,7 +12,7 @@ export default function DashboardList() {
   const openModal = useModal();
 
   const handleCreateDashboardClick = () => {
-    openModal(({ close }) => <InputModal closeClick={close} />);
+    openModal(({ close }) => <CreateDashboardModal closeClick={close} />);
   };
 
   return (
