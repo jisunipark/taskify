@@ -1,5 +1,5 @@
 import classNames from 'classnames/bind';
-import InputModal from '@/components/common/modal/input-modal/InputModal';
+import CreateColumnModal from '@/components/common/modal/create-column-modal/CreateColumnModal';
 import useModal from '@/hooks/useModal';
 import AddIcon from '@/assets/icons/AddIcon';
 import styles from './TaskItem.module.scss';
@@ -10,8 +10,7 @@ export default function AddColumn() {
   const openModal = useModal();
 
   const handleCreateColumnClick = () => {
-    // TODO 컬럼 생성 모달
-    openModal(({ close }) => <InputModal closeClick={close} />);
+    openModal(({ close }) => <CreateColumnModal closeClick={close} />);
   };
 
   return (
