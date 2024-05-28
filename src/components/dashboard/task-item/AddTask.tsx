@@ -1,5 +1,5 @@
 import classNames from 'classnames/bind';
-import InputModal from '@/components/common/modal/input-modal/InputModal';
+import CreateCardModal from '@/components/common/modal/create-card-modal/CreateCardModal';
 import useModal from '@/hooks/useModal';
 import AddIcon from '@/assets/icons/AddIcon';
 import styles from './TaskItem.module.scss';
@@ -10,8 +10,7 @@ export default function AddTask() {
   const openModal = useModal();
 
   const handleCreateCardClick = () => {
-    // TODO 할 일 생성 모달
-    openModal(({ close }) => <InputModal closeClick={close} />);
+    openModal(({ close }) => <CreateCardModal closeClick={close} />);
   };
 
   return (
